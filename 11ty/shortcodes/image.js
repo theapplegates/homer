@@ -4,7 +4,7 @@ const { imagePaths, imageUrlPath } = require('../constants/images');
 /** Returns optimized image markup. Expects to receive a root-relative absolute path to the image (e.g., src/assets/images/image.png).
  * Example usage: `{% image 'src/assets/images/image.png', 'Alt text' %}`.
  */
-async function imageShortcode(src, alt = '', widths = [300, 600], formats = ['avif', 'jpeg'], sizes = '100vw') {
+async function imageShortcode(src, alt = '', widths = [100, 300, 600, 1200], formats = ['avif', 'webp', 'jpg'], sizes = '100vw') {
   const metadata = await Image(src, {
     widths,
     formats,
